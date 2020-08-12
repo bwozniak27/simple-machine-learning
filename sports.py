@@ -66,10 +66,8 @@ def makePrediction(newStuff, AverageDict):
     difference = {}
     for label in AverageDict:
         difference[label] = {}
-       # print("testing: ")
         for i, description in enumerate(AverageDict[label]):
             num = AverageDict[label][description]
-           # print(num)
             difference[label][description] = pow((num - float(newStuff[i])), 2)
     print()
     print("difference: ")
@@ -82,8 +80,6 @@ def makePrediction(newStuff, AverageDict):
             sum += difference[label][description]
         accuracy[label] = sum
     print()
-  #  print("sum = ")
-  #  print(sum)
     print()
     print(accuracy)
     minimum = 0
@@ -122,8 +118,6 @@ def main():
     print(newStuff)
     print()
     for i, x in enumerate(newStuff):
-      #  print("checking averages: ")
-      #  print(averages)
         prediction = makePrediction(newStuff[i], averages)
         print("prediction: " + prediction + ", actual: " + newStuff[i][-1])
 
